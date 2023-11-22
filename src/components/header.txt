@@ -1,0 +1,21 @@
+import Countdown from "./countdown";
+
+export default function Header() {
+    const n = new Date();
+    const y = n.getFullYear();
+    const m = n.getMonth() + 1;
+    const d = n.getDate();
+    const name = "Bella";
+
+    return(
+        <>
+            <div className="flex items-center justify-center h-screen bg-gray-900">
+                <div className="grid place-items-center border rounded-xl bg-white p-8">
+                    <h1 className="uppercase text-lg text-center text-white bg-primary p-2 rounded-t-md">Current Date: {m}/{d}/{y}</h1>
+                    <h2 className="uppercase text-lg text-center text-black font-semibold">Next Birthday: <span className="text-primary font-semibold">{name}</span></h2>
+                    <Countdown />
+                </div>
+            </div>  
+        </>
+    );
+}
